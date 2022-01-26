@@ -1,0 +1,104 @@
+@import url('https://cdn.fontcdn.ir/Font/Persian/Vazir/Vazir.css');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: hidden;
+}
+body{
+    font-family: 'Vazir';
+    direction: rtl;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+    position: relative;
+}
+.hidden{
+    visibility: hidden;
+}
+.aleart.hide{
+   animation: hideAlert 1s ease forwards;
+}
+@keyframes hideAlert{
+    0%{
+        transform: translateX(-5%);
+        background-color: greenyellow;
+    }
+    40%{
+        transform: translateX(0%);
+        background-color: goldenrod;
+    }
+    80%{
+        transform: translateX(-15%);
+        background-color: green;
+    }
+    100%{
+        transform: translateX(100%);
+    }
+}
+
+.aleart.show{
+    animation: showAlert 1s ease forwards;
+}
+@keyframes showAlert{
+    0%{
+        transform: translateX(100%);
+        background-color: greenyellow;
+    }
+    40%{
+        transform: translateX(-15%);
+        background-color: goldenrod;
+    }
+    80%{
+        transform: translateX(0%);
+        background-color: green;
+    }
+    100%{
+        transform: translateX(-5%);
+    }
+}
+.aleart.show::before{
+    content: '';
+    position: absolute;
+    height: 4px;
+    width: 100%;
+    background-color: #32ac32;
+    bottom: 0;
+    left: 0;
+    animation: hidemaster 5s ease forwards;
+}
+@keyframes hidemaster{
+    0%{
+        width: 100%;
+    }
+    100%{
+        width: 0%;
+    }
+}
+.aleart{
+    position:absolute;
+    top:50px;
+    right: 0;
+    width: 270px;
+    padding: 10px 30px ;
+    background:green ;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.aleart p{
+    margin-top: 19px;
+}
+.aleart svg{
+    cursor: pointer;
+}
+.btn{
+    background-color: orange;
+    color: #fff;
+    padding: 10px 50px;
+    cursor: pointer;
+    margin-top: 25%;
+}
